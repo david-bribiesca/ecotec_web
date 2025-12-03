@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 
-import Header from '@/components/Header';
 import AccommodationSection from '@/components/AccommodationSection';
 import DailyChart from '@/components/DailyChart';
 
@@ -11,7 +10,6 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <Header />
 
       <div className="flex w-full px-8 pb-8 space-x-8 mt-4">
 

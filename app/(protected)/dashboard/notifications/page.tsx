@@ -1,9 +1,9 @@
-import React from 'react'
+import NotificationsDisplay from "@/components/NotificationsDisplay";
 
-function notifications() {
+export default function Page() {
   return (
-    <div>notifications</div>
-  )
+    <div className="p-6">
+      <NotificationsDisplay />
+    </div>
+  );
 }
-
-export default notifications
