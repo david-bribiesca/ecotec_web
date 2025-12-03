@@ -6,7 +6,6 @@ import { ChatInput } from "./ChatInput";
 
 export default function ChatSection() {
   const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-    console.log("API KEY:", apiKey);
 
   const {
     input,
