@@ -23,28 +23,28 @@ export default function AuthForm() {
   const handleAuth = async (mode: "login" | "signup") => {
     setLoading(true)
     setError("")
+    
     try {
       if (mode === "login") {
         const { error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) throw error
-      } else {
-        // Verificar si ya existe
-        const { data: existingUser, error: userError } = await supabase
-          .from("auth.users")
-          .select("*")
-          .eq("email", email)
-          .maybeSingle()
-
-        if (userError && userError.code !== "PGRST116") throw userError
-        if (existingUser) throw new Error("Ya existe una cuenta con este correo electrónico")
-
+      } 
+      else {
         const { error } = await supabase.auth.signUp({ email, password })
         if (error) throw error
       }
+
       router.push("/dashboard")
-    } catch (err: any) {
-      setError(err.message || "Error inesperado, intenta de nuevo.")
-    } finally {
+    } 
+    catch (err: any) {
+      // errores más claros
+      if (err.message?.includes("already registered")) {
+        setError("Este correo ya está registrado.")
+      } else {
+        setError(err.message || "Error inesperado, intenta de nuevo.")
+      }
+    } 
+    finally {
       setLoading(false)
     }
   }
@@ -86,6 +86,7 @@ export default function AuthForm() {
           >
             {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Iniciar sesión"}
           </button>
+
           <button
             onClick={() => handleAuth("signup")}
             disabled={loading}

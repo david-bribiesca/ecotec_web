@@ -45,7 +45,7 @@ interface SensorSectionProps {
 }
 
 const AccommodationSection: React.FC<SensorSectionProps> = ({ onSelectSensor }) => (
-  <div className="w-full h-[600px] overflow-y-auto p-2">
+  <div className="w-full overflow-y-auto p-2">
   <h3 className="text-lg font-semibold mb-4 text-gray-800">
     Sensores
   </h3>

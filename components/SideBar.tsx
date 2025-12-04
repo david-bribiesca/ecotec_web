@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import {
   Menu,
   Bell,
-  User,
   LogOut,
   Home,
   MessageSquare,
@@ -120,7 +119,6 @@ const SideBar: React.FC = () => {
       {/* Bottom Section: User & Logout */}
       <div className="flex flex-col w-full space-y-2">
         <div className={`${navItemClasses} text-gray-700 hover:text-green-600`}>
-          <User className="w-6 h-6 min-w-[24px]" />
           <span
             className={`ml-4 whitespace-nowrap overflow-hidden transition-all duration-300 ${
               isExpanded ? "opacity-100 w-auto" : "opacity-0 w-0"
