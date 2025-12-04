@@ -9,6 +9,12 @@ const NotificationsDisplay: React.FC = () => {
 
   const { data, loading } = useNotificationsByDate(selectedDate);
 
+  const formatActuadorName = (name: string): string => {
+    if (name === "pump") return "Bomba de agua";
+    if (name === "fan") return "Ventilador";
+    return name;
+  };
+
   return (
     <div className="w-full flex flex-col gap-6">
       <DateSelector value={selectedDate} onChange={setSelectedDate} />
@@ -37,7 +43,9 @@ const NotificationsDisplay: React.FC = () => {
               >
                 <div>
                   <p className="font-semibold">
-                    {n.actuadores?.nombre || "Actuador desconocido"}
+                    {n.actuadores?.nombre
+                      ? formatActuadorName(n.actuadores.nombre)
+                      : "Actuador desconocido"}
                   </p>
                   <p className="text-sm text-gray-500">
                     {new Date(n.created_at).toLocaleTimeString()}
