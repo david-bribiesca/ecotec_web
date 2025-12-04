@@ -1,32 +1,33 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// Asegúrate de importar tus componentes desde la ruta correcta
+import AccommodationSection from "@/components/AccommodationSection"; 
+import SensorChart from "@/components/SensorChart";
 
-import AccommodationSection from '@/components/AccommodationSection';
-import DailyChart from '@/components/DailyChart';
-
-const HomePage: React.FC = () => {
-  const [selectedSensor, setSelectedSensor] = useState<string>('temperature');
+export default function Dashboard() {
+  // Estado para saber qué sensor ver. Por defecto: 'temperature'
+  const [selectedSensor, setSelectedSensor] = useState<string>("temperature");
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="min-h-screen bg-gray-100 p-4 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-1 space-y-6">
+            <AccommodationSection 
+              onSelectSensor={(sensorKey) => setSelectedSensor(sensorKey)} 
+            />
+          </div>
 
-      <div className="flex w-full px-8 pb-8 space-x-8 mt-4">
-
-        <div className="flex-grow flex flex-col">
-
-          <div className="h-96 rounded-3xl shadow-xl mb-8 relative overflow-hidden">
-            <DailyChart sensorKey={selectedSensor} />
+          {/* Columna Derecha: Gráfica (Ocupa 2 columnas) */}
+          <div className="lg:col-span-2">
+            <div className="h-[500px]">
+              <SensorChart sensorKey={selectedSensor} />
+            </div>
           </div>
 
         </div>
-
-        <aside className="w-80 bg-white p-6 rounded-3xl shadow-xl self-start sticky top-8">
-          <AccommodationSection onSelectSensor={setSelectedSensor} />
-        </aside>
       </div>
     </div>
   );
-};
-
-export default HomePage;
+}

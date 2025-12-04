@@ -45,40 +45,43 @@ interface SensorSectionProps {
 }
 
 const AccommodationSection: React.FC<SensorSectionProps> = ({ onSelectSensor }) => (
-  <div className="w-full">
-    <h3 className="text-lg font-semibold mb-4 text-gray-800">Sensores</h3>
+  <div className="w-full h-[600px] overflow-y-auto p-2">
+  <h3 className="text-lg font-semibold mb-4 text-gray-800">
+    Sensores
+  </h3>
 
-    <div className="space-y-3">
+  <div className="space-y-3">
 
-      <SensorItem
-        icon={Thermometer}
-        title="Sensor de temperatura"
-        sensorKey="temperature"
-        onClick={onSelectSensor}
-      />
+    <SensorItem
+      icon={Thermometer}
+      title="Sensor de temperatura"
+      sensorKey="temperature"
+      onClick={onSelectSensor}
+    />
 
-      <SensorItem
-        icon={Droplet}
-        title="Sensor de humedad en ambiente"
-        sensorKey="humidity"
-        onClick={onSelectSensor}
-      />
+    <SensorItem
+      icon={Droplet}
+      title="Humedad en ambiente"
+      sensorKey="humidity"
+      onClick={onSelectSensor}
+    />
 
-      <SensorItem
-        icon={Activity}
-        title="Nivel Agua del tanque"
-        sensorKey="water"
-        onClick={onSelectSensor}
-      />
+    <SensorItem
+      icon={Activity}
+      title="Nivel Agua del tanque"
+      sensorKey="water"
+      onClick={onSelectSensor}
+    />
 
-      <SensorItem
-        icon={Volume2}
-        title="Humedad en tierra"
-        sensorKey="soil"
-        onClick={onSelectSensor}
-      />
-    </div>
+    <SensorItem
+      icon={Volume2}
+      title="Humedad en tierra"
+      sensorKey="soil"
+      onClick={onSelectSensor}
+    />
   </div>
+</div>
+
 );
 
 export default AccommodationSection;
