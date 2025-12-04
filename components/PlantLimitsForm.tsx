@@ -88,7 +88,7 @@ const PlantLimitsForm: React.FC = () => {
                 <input
                   type="text"
                   className="w-full pl-4 pr-14 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all"
-                  placeholder="Ej: Tomate Cherry, Albahaca..."
+                  placeholder="Ej: Tomate Cherry, Chile Patuano..."
                   value={plantName}
                   onChange={(e) => setPlantName(e.target.value)}
                 />

@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import Image from "next/image"
 export default function Hero() {
   return (
     <section className="bg-gradient-to-b from-green-50 to-white text-center py-24 px-6">
@@ -29,8 +29,16 @@ export default function Hero() {
 
         {/* Placeholder para imagen cuadrada */}
         <div className="mt-14 flex justify-center">
-          <div className="w-80 h-80 bg-gray-200 rounded-2xl shadow-inner flex items-center justify-center">
-            <span className="text-gray-500 text-sm">Imagen del producto (placeholder)</span>
+          {/* Cambio 1: Cambié h-80 por h-auto para que la altura se ajuste a la imagen */}
+          {/* Cambio 2: Agregué p-4 para que la imagen no toque los bordes (estética) */}
+          <div className="w-140 h-auto bg-gray-200 rounded-2xl shadow-inner flex items-center justify-center">
+            <Image
+              src="/ecotec.png"
+              alt="Imagen de SmartPot"
+              width={320}
+              height={180} /* Cambio 3: Ajusta este valor a la altura real proporcional de tu imagen */
+              className="w-full h-auto object-contain rounded-xl" /* rounded opcional para la imagen */
+            />
           </div>
         </div>
       </div>
