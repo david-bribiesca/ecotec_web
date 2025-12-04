@@ -54,11 +54,11 @@ const PlantLimitsForm: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <section className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="max-w-xl w-full">
         
         {/* TARJETA PRINCIPAL */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden w-full md:w-[500px]">
           
           {/* HEADER */}
           <div className="bg-white border-b border-gray-100 p-5 flex items-center gap-4">
