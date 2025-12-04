@@ -6,7 +6,6 @@ import {
   Thermometer,
   Droplet,
   Activity,
-  Volume2,
   ChevronRight,
   LucideIcon,
 } from "lucide-react";
@@ -74,7 +73,7 @@ const AccommodationSection: React.FC<SensorSectionProps> = ({ onSelectSensor }) 
     />
 
     <SensorItem
-      icon={Volume2}
+      icon={Droplet}
       title="Humedad en tierra"
       sensorKey="soil"
       onClick={onSelectSensor}

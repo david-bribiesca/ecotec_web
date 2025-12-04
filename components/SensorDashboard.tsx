@@ -61,7 +61,7 @@ const SensorDashboard = () => {
 
         <CircleProgress
           title="Humedad Tierra"
-          icon={Volume2}
+          icon={Droplet}
           displayValue={readings.soil || 0}
           unit="%"
           percentage={readings.soil || 0}
