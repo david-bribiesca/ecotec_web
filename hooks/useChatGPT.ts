@@ -1,10 +1,4 @@
-// === SmartPot Chat Refactor ===
-// Este archivo contiene todos los componentes refactorizados + custom hook
-// Crea cada archivo según los comentarios indicados si quieres separarlo.
 
-// =============================
-// useChatGPT.ts (custom hook)
-// =============================
 "use client";
 
 import { useState, useRef, useEffect } from "react";
