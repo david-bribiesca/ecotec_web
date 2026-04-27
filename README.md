@@ -174,13 +174,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm start` | Start the production server |
 | `npm run lint` | Run ESLint |
 
----
 
-## Authentication
-
-Authentication is handled by Supabase. [middleware.ts](middleware.ts) runs on every request to refresh the session cookie, enabling SSR-compatible auth via `@supabase/ssr`. Protected routes live under `app/(protected)/` and redirect unauthenticated users to `/login` via `useAuth`.
-
----
 
 ## Real-Time Monitoring
 
